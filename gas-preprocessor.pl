@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # by David Conrad
-# modifications by D. R. Commander, Copyright (C)2013
+# modifications by D. R. Commander, Copyright (C)2013, 2016
 # This code is licensed under GPLv2 or later; go to gnu.org to read it
 #  (not that it much matters for an asm preprocessor)
 # usage: set your assembler to be something like "perl gas-preprocessor.pl gcc"
@@ -387,7 +387,7 @@ if ($ENV{GASPP_DEBUG}) {
 } else {
     ($fh, $filename) = tempfile("gas-preprocessor-tmp-XXXXXX", SUFFIX => '.S',
                                 TMPDIR => 1, UNLINK => 1);
-    open(ASMFILE, ">" . $filename) or die "Error running assembler";
+   open(ASMFILE, ">" . $filename) or die "Error creating temporary file: $!";
 }
 
 my @sections;
