@@ -97,7 +97,7 @@ if (!$comm) {
 my %ppc_spr = (ctr    => 9,
                vrsave => 256);
 
-open(ASMFILE, "-|", @preprocess_c_cmd) || die "Error running preprocessor";
+open(ASMFILE, "-|", @preprocess_c_cmd) || die "Error running preprocessor: $!";
 
 my $current_macro = '';
 my $macro_level = 0;
